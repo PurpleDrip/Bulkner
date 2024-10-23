@@ -87,7 +87,6 @@ const AddMeal = () => {
           value={meal}
           placeholder="Meal Name"
           className="h-[3rem] w-[16rem] rounded-2xl pl-4 outline-none"
-          autoFocus
           onChange={(e) => setMeal(e.target.value)}
         />
         <button
