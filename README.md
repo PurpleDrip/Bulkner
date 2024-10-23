@@ -11,4 +11,7 @@ In order to view my project, follows the below steps:
 
 
 CLI:
-  git clone 
+  git clone "https://github.com/PurpleDrip/Bulkner/tree/main/frontend"
+  cd frontend
+  npm install 
+  npm run dev
