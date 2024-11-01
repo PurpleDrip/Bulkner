@@ -39,7 +39,7 @@ Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.co
 
 ## Live Demo
 
-The application is live and can be accessed at [bulkner.pages.dev](https://bulkner.pages.dev).
+The application is live and can be accessed at [Bulkner](https://bulkner.pages.dev).
 
 ## Features
 
