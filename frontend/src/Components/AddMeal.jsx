@@ -23,7 +23,7 @@ const AddMeal = ({ setCaloriesCount }) => {
       toast.success("Meal added successfully!");
     } catch (err) {
       console.error(err);
-      toast.error("Failed to add meal!", {
+      toast.error("Meal not in database!", {
         position: "top-right",
         autoClose: 3000,
       });
