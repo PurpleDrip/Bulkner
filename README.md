@@ -35,7 +35,7 @@ Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.co
    npm run dev
    ```
 
-5. **Open your browser and navigate to `http://localhost:3000`** (or the port specified in your terminal) to view the application.
+5. **Open your browser and navigate to `http://localhost:5173`** (or the port specified in your terminal) to view the application.
 
 ## Live Demo
 
