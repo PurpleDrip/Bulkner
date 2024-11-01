@@ -17,12 +17,12 @@ Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.co
 
 1. **Clone the frontend repository**
    ```bash
-   git clone https://github.com/PurpleDrip/Bulkner/tree/main
+   git clone https://github.com/PurpleDrip/Bulkner
    ```
 
 2. **Navigate to the frontend folder**
    ```bash
-   cd frontend
+   cd Bulkner/frontend
    ```
 
 3. **Install the required dependencies**
