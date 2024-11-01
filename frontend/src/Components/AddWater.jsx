@@ -38,21 +38,21 @@ const AddWater = ({ setWaterCount }) => {
 
   return (
     <div className="h-[25rem] w-[22rem] border-2 border-indigo-400 rounded-3xl flex items-center justify-center flex-col gap-8 box">
-      <div className="flex gap-4">
+      <div className="flex gap-4 water-btn-container">
         <button
-          className="box h-24 w-24 bg-black rounded-3xl text-xl font-bold text-indigo-400"
+          className=" h-24 w-24 bg-black rounded-3xl text-xl font-bold text-indigo-400 water-btn"
           onClick={() => setValue(0.25)}
         >
           1 CUP
         </button>
         <button
-          className="box h-24 w-24 bg-black rounded-3xl text-xl font-bold text-indigo-400"
+          className=" h-24 w-24 bg-black rounded-3xl text-xl font-bold text-indigo-400 water-btn"
           onClick={() => setValue(0.5)}
         >
           2 CUP'S
         </button>
         <button
-          className="box h-24 w-24 bg-black rounded-3xl text-xl font-bold text-indigo-400"
+          className=" h-24 w-24 bg-black rounded-3xl text-xl font-bold text-indigo-400 water-btn"
           onClick={() => setValue(0.75)}
         >
           3 CUP'S
@@ -60,7 +60,7 @@ const AddWater = ({ setWaterCount }) => {
       </div>
       <input
         type="number"
-        className="outline-none h-12 pl-4 rounded-xl"
+        className="outline-none h-12 pl-4 rounded-xl get-value"
         placeholder="in Liters"
         value={value}
         onChange={(e) => {

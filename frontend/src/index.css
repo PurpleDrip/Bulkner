@@ -9,29 +9,49 @@
 }
 
 @media (max-width: 768px) {
+  .main-header {
+    font-size: 1.5rem;
+  }
+  .get-value {
+    height: 3rem;
+    width: 12rem;
+  }
+  .water-btn-container {
+    width: 13rem;
+    height: 4rem;
+  }
+  .water-btn {
+    font-size: 0.8rem;
+    height: 4rem;
+  }
+  .add-meal-header {
+    font-size: 1rem;
+  }
   .links {
-    font-size: 1.2rem;
+    font-size: 1rem;
     flex-direction: column;
     gap: 0;
+    white-space: nowrap;
+    font-weight: 700;
   }
 
   .box-container {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    margin: 0;
-    margin-top: 8rem;
+    gap: 8rem;
   }
   .box {
-    transform: scale(0.7);
+    height: 15rem;
+    width: 15rem;
   }
   .status-container {
     position: absolute;
     top: 27rem;
+    white-space: nowrap;
+    gap: 0;
   }
   .status-1,
   .status-2 {
-    white-space: nowrap;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }

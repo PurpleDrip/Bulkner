@@ -48,12 +48,14 @@ const AddMeal = ({ setCaloriesCount }) => {
         className="flex items-center justify-center flex-col gap-[2rem]"
         onSubmit={handleSubmit}
       >
-        <h1 className="text-5xl font-bold text-indigo-200">Add Your Meal</h1>
+        <h1 className="text-5xl font-bold text-indigo-200 add-meal-header">
+          Add Your Meal
+        </h1>
         <input
           type="text"
           value={meal}
           placeholder="Meal Name"
-          className="h-[3rem] w-[16rem] rounded-2xl pl-4 outline-none"
+          className="h-[3rem] w-[16rem] rounded-2xl pl-4 outline-none get-value"
           onChange={(e) => setMeal(e.target.value)}
         />
         <button
