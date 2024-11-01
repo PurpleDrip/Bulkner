@@ -41,7 +41,7 @@ const Hero = () => {
   return (
     <div className="hero-container h-[83vh] flex items-center justify-center gap-20 flex-col">
       <button
-        className="absolute right-[3rem] top-[7rem] h-12 w-28 bg-indigo-400 border-[3.5px] text-white rounded-3xl border-black"
+        className="absolute right-[3rem] top-[7rem] h-12 w-28 bg-indigo-400 border-[3.5px] text-white rounded-3xl border-black reset-btn"
         onClick={async () => {
           try {
             await axios.get("https://cal-tracker.onrender.com/api/reset");

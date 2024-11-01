@@ -38,7 +38,8 @@
   .box-container {
     display: flex;
     flex-direction: column;
-    gap: 8rem;
+    gap: 5rem;
+    margin-top: 2rem;
   }
   .box {
     height: 15rem;
@@ -46,12 +47,18 @@
   }
   .status-container {
     position: absolute;
-    top: 27rem;
+    top: 19rem;
     white-space: nowrap;
     gap: 0;
   }
   .status-1,
   .status-2 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+  .reset-btn {
+    height: 2.5rem;
+    width: 3rem;
+    right: 0.2rem;
+    font-size: 0.8rem;
   }
 }
