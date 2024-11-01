@@ -1,6 +1,6 @@
-It looks like you're working on a `README.md` file, but there are a few formatting issues that need to be corrected for proper Markdown rendering. Here’s the revised version with all the necessary corrections:
 
-```markdown
+
+
 # Daily Calorie Tracker
 
 This project is designed to help you keep track of your daily calorie intake. It has been customized to meet my specific needs and preferences.
@@ -54,4 +54,4 @@ If you wish to contribute to this project, feel free to fork the repository and 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
+
