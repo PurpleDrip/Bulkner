@@ -12,28 +12,27 @@ const Hero = () => {
   const [totalWater, setTotalWater] = useState(3); // Total daily water goal in liters
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://cal-tracker.onrender.com/api/getCount"
-        );
-        console.log(response);
-        setCaloriesCount(response.data.totalCalorie);
-        setWaterCount(response.data.totalLitre);
-        setLoading(false);
-      } catch (err) {
-        console.log(err);
-        setLoading(false);
-      }
-    };
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        "https://cal-tracker.onrender.com/api/getCount"
+      );
+      setCaloriesCount(response.data.totalCalorie);
+      setWaterCount(response.data.totalLitre);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchData();
   }, []);
 
   if (loading) {
     return (
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <h1 className="text-5xl text-white">Loading...</h1>
       </div>
     );
@@ -46,6 +45,7 @@ const Hero = () => {
         onClick={async () => {
           try {
             await axios.get("https://cal-tracker.onrender.com/api/reset");
+            fetchData(); // Update counts after reset
             toast.success("Reset successful");
           } catch (err) {
             console.log(err);
@@ -55,8 +55,8 @@ const Hero = () => {
       >
         Reset
       </button>
-      <AddMeal />
-      <AddWater />
+      <AddMeal setCaloriesCount={setCaloriesCount} />
+      <AddWater setWaterCount={setWaterCount} />
       <p className="absolute bottom-[7rem] text-3xl text-white">{`Calories Eaten: ${caloriesCount} kCal, Remaining: ${
         totalCal - caloriesCount
       } kCal`}</p>

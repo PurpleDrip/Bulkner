@@ -1,9 +1,8 @@
 import axios from "axios";
-import React, { useState } from "react";
-import { Bounce, ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import { useState } from "react";
 
-const AddMeal = () => {
+const AddMeal = ({ setCaloriesCount }) => {
   const [meal, setMeal] = useState("");
   const [data, setData] = useState("");
 
@@ -13,43 +12,21 @@ const AddMeal = () => {
         "https://cal-tracker.onrender.com/api/createPlanner",
         { type: "meal", meal: mealName }
       );
-      console.log(response);
       setData(response.data);
-      toast.success("Meal added successfully!", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "light",
-        transition: Bounce,
-      });
+
+      // Update the calorie count immediately after adding the meal
+      const countResponse = await axios.get(
+        "https://cal-tracker.onrender.com/api/getCount"
+      );
+      setCaloriesCount(countResponse.data.totalCalorie);
+
+      toast.success("Meal added successfully!");
     } catch (err) {
       console.error(err);
-      if (err.response && err.response.status === 400) {
-        toast.error("Meal does not exist in database", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          theme: "light",
-          transition: Bounce,
-        });
-      } else {
-        toast.error("Failed to add meal!", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          theme: "light",
-          transition: Bounce,
-        });
-      }
+      toast.error("Failed to add meal!", {
+        position: "top-right",
+        autoClose: 3000,
+      });
     }
   };
 
@@ -57,28 +34,18 @@ const AddMeal = () => {
     e.preventDefault();
 
     if (!meal) {
-      toast.warn("Enter meal name before adding", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "light",
-        transition: Bounce,
-      });
+      toast.warn("Enter meal name before adding");
       return;
     }
 
     mealValidate(meal.toLowerCase());
-    setMeal(""); // Clear the input field after submission
+    setMeal("");
   };
 
   return (
     <div className="h-[25rem] w-[22rem] border-2 border-indigo-400 rounded-3xl flex items-center justify-center">
       <form
         className="flex items-center justify-center flex-col gap-[2rem]"
-        name="meal-adder-form"
         onSubmit={handleSubmit}
       >
         <h1 className="text-5xl font-bold text-indigo-200">Add Your Meal</h1>

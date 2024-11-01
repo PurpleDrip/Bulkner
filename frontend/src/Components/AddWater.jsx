@@ -1,55 +1,33 @@
 import axios from "axios";
-import React, { useState } from "react";
-import { Bounce, ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import { useState } from "react";
 
-const AddWater = () => {
+const AddWater = ({ setWaterCount }) => {
   const [value, setValue] = useState();
   const [customValue, setCustomValue] = useState("");
 
   const submitHandler = async (val) => {
     try {
-      const response = await axios.post(
-        "https://cal-tracker.onrender.com/api/createPlanner",
-        {
-          type: "water",
-          litres: val,
-        }
+      await axios.post("https://cal-tracker.onrender.com/api/createPlanner", {
+        type: "water",
+        litres: val,
+      });
+
+      const countResponse = await axios.get(
+        "https://cal-tracker.onrender.com/api/getCount"
       );
-      toast.success("Water added successfully", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "light",
-      });
+      setWaterCount(countResponse.data.totalLitre);
+
+      toast.success("Water added successfully");
     } catch (err) {
-      console.log(err);
-      toast.error("Failed to add water", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "light",
-      });
+      console.error(err);
+      toast.error("Failed to add water");
     }
   };
 
   const handleSubmit = () => {
     if (!value) {
-      toast.warn("Select or Enter a value", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "light",
-      });
+      toast.warn("Select or Enter a value");
       return;
     }
 
