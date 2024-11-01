@@ -37,7 +37,7 @@ const AddWater = ({ setWaterCount }) => {
   };
 
   return (
-    <div className="h-[25rem] w-[22rem] border-2 border-indigo-400 rounded-3xl flex items-center justify-center flex-col gap-8">
+    <div className="h-[25rem] w-[22rem] border-2 border-indigo-400 rounded-3xl flex items-center justify-center flex-col gap-8 box">
       <div className="flex gap-4">
         <button
           className="box h-24 w-24 bg-black rounded-3xl text-xl font-bold text-indigo-400"

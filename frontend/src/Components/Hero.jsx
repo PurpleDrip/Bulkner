@@ -39,7 +39,7 @@ const Hero = () => {
   }
 
   return (
-    <div className="h-[83vh] flex items-center justify-center gap-16">
+    <div className="h-[83vh] flex items-center justify-center gap-20 flex-col">
       <button
         className="absolute right-[3rem] top-[7rem] h-12 w-28 bg-indigo-400 border-[3.5px] text-white rounded-3xl border-black"
         onClick={async () => {
@@ -55,14 +55,18 @@ const Hero = () => {
       >
         Reset
       </button>
-      <AddMeal setCaloriesCount={setCaloriesCount} />
-      <AddWater setWaterCount={setWaterCount} />
-      <p className="absolute bottom-[7rem] text-3xl text-white">{`Calories Eaten: ${caloriesCount} kCal, Remaining: ${
-        totalCal - caloriesCount
-      } kCal`}</p>
-      <p className="absolute bottom-[4rem] text-3xl text-white">{`Water intake: ${waterCount} Liters, Remaining: ${
-        totalWater - waterCount
-      } Liters`}</p>
+      <div className="flex box-container gap-16 mt-32">
+        <AddMeal setCaloriesCount={setCaloriesCount} />
+        <AddWater setWaterCount={setWaterCount} />
+      </div>
+      <div className="status-container flex flex-col gap-4 mt-8 box-border">
+        <p className="text-3xl text-white status-1">{`Calories Eaten: ${caloriesCount} kCal, Remaining: ${
+          totalCal - caloriesCount
+        } kCal`}</p>
+        <p className="text-3xl text-white status-2">{`Water intake: ${waterCount} Liters, Remaining: ${
+          totalWater - waterCount
+        } Liters`}</p>
+      </div>
     </div>
   );
 };

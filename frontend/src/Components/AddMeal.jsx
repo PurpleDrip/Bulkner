@@ -43,7 +43,7 @@ const AddMeal = ({ setCaloriesCount }) => {
   };
 
   return (
-    <div className="h-[25rem] w-[22rem] border-2 border-indigo-400 rounded-3xl flex items-center justify-center">
+    <div className="h-[25rem] w-[22rem] border-2 border-indigo-400 rounded-3xl flex items-center justify-center box">
       <form
         className="flex items-center justify-center flex-col gap-[2rem]"
         onSubmit={handleSubmit}

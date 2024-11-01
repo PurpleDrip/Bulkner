@@ -7,3 +7,31 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+  .links {
+    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    margin-top: 8rem;
+  }
+  .box {
+    transform: scale(0.7);
+  }
+  .status-container {
+    position: absolute;
+    top: 27rem;
+  }
+  .status-1,
+  .status-2 {
+    white-space: nowrap;
+    font-size: 1.2rem;
+  }
+}
