@@ -8,13 +8,13 @@ const AddWater = ({ setWaterCount }) => {
 
   const submitHandler = async (val) => {
     try {
-      await axios.post("https://cal-tracker.onrender.com/api/createPlanner", {
+      await axios.post("http://localhost:5000/api/createPlanner", {
         type: "water",
         litres: val,
       });
 
       const countResponse = await axios.get(
-        "https://cal-tracker.onrender.com/api/getCount"
+        "http://localhost:5000/api/getCount"
       );
       setWaterCount(countResponse.data.totalLitre);
 

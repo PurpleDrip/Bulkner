@@ -9,14 +9,14 @@ const AddMeal = ({ setCaloriesCount }) => {
   const mealValidate = async (mealName) => {
     try {
       const response = await axios.post(
-        "https://cal-tracker.onrender.com/api/createPlanner",
+        "http://localhost:5000/api/createPlanner",
         { type: "meal", meal: mealName }
       );
       setData(response.data);
 
       // Update the calorie count immediately after adding the meal
       const countResponse = await axios.get(
-        "https://cal-tracker.onrender.com/api/getCount"
+        "http://localhost:5000/api/getCount"
       );
       setCaloriesCount(countResponse.data.totalCalorie);
 

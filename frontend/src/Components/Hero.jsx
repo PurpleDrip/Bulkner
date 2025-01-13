@@ -14,9 +14,7 @@ const Hero = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(
-        "https://cal-tracker.onrender.com/api/getCount"
-      );
+      const response = await axios.get("http://localhost:5000/api/getCount");
       setCaloriesCount(response.data.totalCalorie);
       setWaterCount(response.data.totalLitre);
       setLoading(false);
@@ -44,7 +42,7 @@ const Hero = () => {
         className="absolute right-[3rem] top-[7rem] h-12 w-28 bg-indigo-400 border-[3.5px] text-white rounded-3xl border-black reset-btn"
         onClick={async () => {
           try {
-            await axios.get("https://cal-tracker.onrender.com/api/reset");
+            await axios.get("http://localhost:5000/api/reset");
             fetchData(); // Update counts after reset
             toast.success("Reset successful");
           } catch (err) {
