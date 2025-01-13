@@ -1,0 +1,21 @@
+# Node modules
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Logs
+*.log
+
+# Environment files
+.env
+
+# OS-specific files
+.DS_Store
+
+# Miscellaneous
+*.swp
+*.swo
+.vscode/
+.idea/
+*.iml
